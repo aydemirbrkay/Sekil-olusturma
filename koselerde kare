@@ -1,0 +1,63 @@
+package lecturepractice.javafx;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
+
+public class sınavsorusudeneme extends Application {
+    @Override
+    public void start(Stage stage) throws Exception {
+
+        Rectangle r=new Rectangle(160,160,80,80); // ortadaki kare x=pane-r/2 y=pane-r/2
+
+        Rectangle r1=new Rectangle(140,140,40,40); // sol üst x=öncekix-r/2 y=öncekiy-r/2 160,160
+        r1.setFill(Color.GREY);
+        Rectangle r2=new Rectangle(220,140,40,40); //sağ üst x=öncekix+(r1+r2)/2 y=öncekiy-r/2 160,160
+        r2.setFill(Color.GREY);
+        Rectangle r3=new Rectangle(140,220,40,40);  //sol alt x=öncekix-r/2 y=öncekix+(r1+r2)/2  160,160
+        r3.setFill(Color.GREY);
+        Rectangle r4=new Rectangle(220,220,40,40); //sağ alt x=öncekix+(r1+r2)/2 y=öncekix+(r1+r2)/2
+        r4.setFill(Color.GREY);
+
+        //sol üst köşe dörtgenleri sol üst kare bilgilerini alacak 140,140
+        Rectangle r5=new Rectangle(130,130,20,20); //sol üst  x=öncekix-r/2  y=öncekiy-r/2
+        Rectangle r6=new Rectangle(170,130,20,20); // sağ üst x=öncekix+(r1+r2)/2 y=öncekiy-r/2
+        Rectangle r7=new Rectangle(170,170,20,20); //sağ alt  x=öncekix+(r1+r2)/2 y=öncekiy+(r1+r2)/2
+        r7.setFill(Color.AQUAMARINE);
+        Rectangle r8=new Rectangle(130,170,20,20); //sol alt  x=öncekix-r/2   y=öncekix+(r1+r2)/2
+
+        //sağ üst köşe dörtgenleri 220,140
+        Rectangle r9=new Rectangle(210,130,20,20); //sol üst   x=öncekix-r/2 y=öncekiy-r/2
+        Rectangle r10=new Rectangle(250,130,20,20); // sağ üst x=öncekix+(r1+r2)/2 y=öncekiy-r/2
+        Rectangle r11=new Rectangle(210,170,20,20); //sol alt  x=öncekix-r/2   y=öncekiy+(r1+r2)/2
+        r11.setFill(Color.AQUAMARINE);
+        Rectangle r12=new Rectangle(250,170,20,20); //sağ alt  x=öncekix+(r1+r2)/2 y=öncekiy+(r1+r2)/2
+
+        //sol alt dörtgen 140,220
+        Rectangle r13=new Rectangle(130,210,20,20); //sol üst
+        r13.setFill(Color.RED);
+        Rectangle r14=new Rectangle(170,210,20,30); //sağ üst getx gety ilki weight ikinci height
+        r14.setFill(Color.RED);
+        r14.getWidth();
+        System.out.println(r14.getX());
+
+
+//kullanıcdan sayı al for döngüsü ile kare oluştur oluşturduğun karelere konum ata
+        // 3 ==1+4+4^n-1
+        // 4==1+4+4^n+4^n-1
+
+
+
+
+
+        Pane root=new Pane();
+        root.getChildren().addAll(r,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,r14);
+        Scene scene=new Scene(root,400,400);
+        stage.setScene(scene);
+        stage.show();
+
+    }
+}
